@@ -1,3 +1,5 @@
-ubuntu dependencies:
+It should be enough to just run the setup.py script.
 
-sudo apt-get install python-mechanize
+
+
+ubuntu dependencies: python-mechanize
