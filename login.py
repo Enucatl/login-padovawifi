@@ -3,10 +3,16 @@
 
 from __future__ import division, print_function
 import re
+import os
 import mechanize
 import sys
 
 login_site = "http://login.padovawifi.it/"
+password_filename = "padovawifi_password"
+
+if not os.path.exists("padovawifi_password"):
+    print("Password file 'padovawifi_password' not found!")
+    sys.exit(1)
 
 print("opening browser")
 br = mechanize.Browser()
@@ -16,7 +22,7 @@ logged_in = "Collegato a Padova WiFi" in text
 if not logged_in:
     br.select_form(name="form1")
     print("username and password...")
-    with open("padovawifi_password") as password_file:
+    with open(password_filename) as password_file:
         lines = password_file.readlines()
         br["UserName"] = lines[0].strip()
         br["Password"] = lines[1].strip()
