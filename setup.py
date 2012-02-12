@@ -11,15 +11,16 @@ try:
     print("mechanize found (OK!)")
 except ImportError:
     print("""could not find the mechanize module. Please install it.
-            If you are running an ubuntu system, just type:
+If you are running an ubuntu system, just type:
             
             sudo apt-get install python-mechanize""")
     sys.exit(1)
 
-print("""Beware! The password is going to be saved as plain text. Encryption
-        is not yet supported. Do you want to continue? """, end='')
+print("""Beware! The password is going to be saved as plain text.
+Encryption is not yet supported. Do you want to continue? """, end='')
 cont = raw_input("[S/n] ")
 if cont is "n":
+    print("Exiting.")
     sys.exit(1)
 
 username = raw_input("Enter your padovawifi username: ")
