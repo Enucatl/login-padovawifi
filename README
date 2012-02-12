@@ -1,0 +1,3 @@
+ubuntu dependencies:
+
+sudo apt-get install python-mechanize
