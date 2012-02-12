@@ -2,13 +2,14 @@
 #coding=utf-8
 
 from __future__ import division, print_function
-import re
+import sys
 import os
 import mechanize
-import sys
 
 login_site = "http://login.padovawifi.it/"
-password_filename = "/home/matteo/bin/login/padovawifi_password"
+my_folder = sys.path[0]
+password_filename = "padovawifi_password"
+password_filename = os.path.join(my_folder, password_filename)
 
 if not os.path.exists(password_filename):
     print("Password file 'padovawifi_password' not found!")
