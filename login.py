@@ -8,9 +8,9 @@ import mechanize
 import sys
 
 login_site = "http://login.padovawifi.it/"
-password_filename = "padovawifi_password"
+password_filename = "/home/matteo/bin/login/padovawifi_password"
 
-if not os.path.exists("padovawifi_password"):
+if not os.path.exists(password_filename):
     print("Password file 'padovawifi_password' not found!")
     sys.exit(1)
 
