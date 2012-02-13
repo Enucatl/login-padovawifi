@@ -1,5 +1,19 @@
+SETUP
 It should be enough to just run the setup.py script.
 
+Automatically run script after boot:
+add to /etc/network/interfaces, under the description of your network
+interface, e.g. auto eth1
+
+    post-up /path/to/login.py
 
 
-ubuntu dependencies: python-mechanize
+Automatically run script every hour:
+
+    sudo crontab -e
+
+then add the following line and save:
+
+    2 * * * * /path/to/login.py
+
+
