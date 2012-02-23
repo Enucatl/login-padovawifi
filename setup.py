@@ -3,6 +3,7 @@
 
 from __future__ import print_function
 import sys
+import getpass
 
 print("Hi! Welcome to login-padovawifi.")
 print("I'm going to check if you installed the mechanize module...")
@@ -24,7 +25,7 @@ if cont is "n":
     sys.exit(1)
 
 username = raw_input("Enter your padovawifi username: ")
-password = raw_input("Enter your padovawifi password: ")
+password = getpass.getpass(prompt="Enter your padovawifi password: ")
 
 file_name = "padovawifi_password"
 with open(file_name, 'w') as output_file:
